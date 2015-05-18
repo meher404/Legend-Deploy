@@ -1,0 +1,154 @@
+{
+  "name": "",
+  "css_prefix_text": "icon-",
+  "css_use_suffix": false,
+  "hinting": true,
+  "units_per_em": 1000,
+  "ascent": 850,
+  "glyphs": [
+    {
+      "uid": "500fc1f109021e4b1de4deda2f7ed399",
+      "css": "laptop",
+      "code": 59409,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "0357f7abbc0babf43509669f332e41e6",
+      "css": "mobile-5",
+      "code": 59398,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "9755f76110ae4d12ac5f9466c9152031",
+      "css": "book-1",
+      "code": 59401,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "51727ca007aa35ceabcaffc28934faee",
+      "css": "book-open",
+      "code": 59399,
+      "src": "entypo"
+    },
+    {
+      "uid": "48b79f27e4798f23bafa07b55dbe5b73",
+      "css": "book",
+      "code": 59400,
+      "src": "entypo"
+    },
+    {
+      "uid": "767fede84586366cd7d6c835be745454",
+      "css": "mobile-4",
+      "code": 59397,
+      "src": "entypo"
+    },
+    {
+      "uid": "4d3a91e6b0db6e03acaa74a861e2ab95",
+      "css": "desktop",
+      "code": 59405,
+      "src": "typicons"
+    },
+    {
+      "uid": "eea1af32a01c5e7a9ce5675bcff64a7b",
+      "css": "laptop-1",
+      "code": 59410,
+      "src": "typicons"
+    },
+    {
+      "uid": "8fc56819afcd07e2786e34f18d39b71b",
+      "css": "book-open-1",
+      "code": 59402,
+      "src": "iconic"
+    },
+    {
+      "uid": "2adb5fa922bd92ebeef498ec7dbcae6d",
+      "css": "mobile-1",
+      "code": 59394,
+      "src": "iconic"
+    },
+    {
+      "uid": "m3m8301t2xdy30x4lp7txm0vztl67tcl",
+      "css": "mobile",
+      "code": 59392,
+      "src": "modernpics"
+    },
+    {
+      "uid": "raxalm7kdj5at9v49bevw6r2cw7fdv9r",
+      "css": "mobile-alt",
+      "code": 59393,
+      "src": "modernpics"
+    },
+    {
+      "uid": "dplw5xo88mzzr7b45nvjcamyyhni6drs",
+      "css": "book-2",
+      "code": 59403,
+      "src": "modernpics"
+    },
+    {
+      "uid": "31b90585534c8b455469d84a95f1959b",
+      "css": "mobile-3",
+      "code": 59396,
+      "src": "mfglabs"
+    },
+    {
+      "uid": "dc4eb27cd8f0cd537206d00dd85c0286",
+      "css": "baseball",
+      "code": 59413,
+      "src": "maki"
+    },
+    {
+      "uid": "9f5ce0d9f586e3df00449ad6ed6b0bf3",
+      "css": "basketball",
+      "code": 59414,
+      "src": "maki"
+    },
+    {
+      "uid": "429c0a4a7c5aba2f8a894f98b48529b3",
+      "css": "football",
+      "code": 59415,
+      "src": "maki"
+    },
+    {
+      "uid": "abe051e31ad705400cf6226b24b6e828",
+      "css": "desktop-1",
+      "code": 59406,
+      "src": "elusive"
+    },
+    {
+      "uid": "54ee0df068f4afe93779eb184f9b77f2",
+      "css": "desktop-circled",
+      "code": 59407,
+      "src": "elusive"
+    },
+    {
+      "uid": "949f56916cd9c4f45ef76cc604f02e2e",
+      "css": "laptop-2",
+      "code": 59411,
+      "src": "elusive"
+    },
+    {
+      "uid": "3ccaec0f82abb6c57aa6fc8feeba9f45",
+      "css": "laptop-circled",
+      "code": 59412,
+      "src": "elusive"
+    },
+    {
+      "uid": "a4232c4b087d715e826ba0793dab59ae",
+      "css": "book-3",
+      "code": 59404,
+      "src": "elusive"
+    },
+    {
+      "uid": "7697f1734d53461137f05faab3f79cf0",
+      "css": "desktop-2",
+      "code": 59408,
+      "src": "linecons"
+    },
+    {
+      "uid": "6a9f3405aba67bcaee81e7ea38946b27",
+      "css": "mobile-2",
+      "code": 59395,
+      "src": "linecons"
+    }
+  ]
+}

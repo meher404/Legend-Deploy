@@ -1,0 +1,50 @@
+#regBg{
+                display:none;
+                position:fixed;
+                width:100%;
+                top:0;
+                left:0;
+                background:#333;
+                z-index:9999998;
+}
+
+#main{
+        min-width: 350px;
+        position:absolute;
+        left:-99999px;
+        top:500;
+        background:#fff;
+        z-index:9999999;
+        border:3px solid #222;
+        -moz-border-radius:9px;
+        border-radius:9px;
+        -webkit-border-radius:9px;
+        margin:0;
+        padding:0;
+        color:#333;
+        text-align:left;
+        font-family:arial,sans-serif;
+        font-size:13px;
+}
+
+#main1{
+        min-width: 350px;
+        position:absolute;
+        left:-99999px;
+        top:500;
+        background:#fff;
+        z-index:9999999;
+        border:3px solid #222;
+        -moz-border-radius:9px;
+        border-radius:9px;
+        -webkit-border-radius:9px;
+}
+
+.summary {
+	color: black;
+	font-weight: 600;
+}
+
+.prod_summary{
+	font-weight: 500;
+}

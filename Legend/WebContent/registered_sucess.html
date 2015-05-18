@@ -1,0 +1,170 @@
+    <!DOCTYPE HTML>
+    <html lang="en">
+	
+    <head>
+    <meta charset="utf-8">
+    <title>Legend - The New way to Shop</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Styles -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel='stylesheet' id='prettyphoto-css'  href="css/prettyPhoto.css" type='text/css' media='all'>
+    <link href="css/fontello.css" type="text/css" rel="stylesheet">
+	<!-- Layers -->
+	<link href="css/layer.css" type="text/css" rel="stylesheet">
+	<!-- <link href="css/lightbox.css" type="text/css" rel="stylesheet" /> -->
+    <!--[if lt IE 7]>
+            <link href="css/fontello-ie7.css" type="text/css" rel="stylesheet">  
+        <![endif]-->
+    <!-- Google Web fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Quattrocento:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Patua+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <style>
+    body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+    }
+    </style>
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+          <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <!-- JQuery -->
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <!-- Load ScrollTo -->
+    <script type="text/javascript" src="js/jquery.scrollTo-1.4.2-min.js"></script>
+    <!-- Load LocalScroll -->
+    <script type="text/javascript" src="js/jquery.localscroll-1.2.7-min.js"></script>
+    <!-- prettyPhoto Initialization -->
+    <script type="text/javascript" charset="utf-8">
+          $(document).ready(function(){
+            $("a[rel^='prettyPhoto']").prettyPhoto();
+          });
+		function unHide(val){
+			document.getElementById("regDiv").style.display = "block";
+			var inhtml = document.getElementById(val).innerHTML+"<h1>Hello</h1>";
+			console.log(document.getElementById(val).innerHTML);
+			document.getElementById("form_add_to_cart").innerHTML = inhtml;
+		}
+
+		function hide(){
+			document.getElementById("regDiv").style.display = "none";
+        }
+	 </script>
+    </head>
+    
+	<body>
+    <!--******************** NAVBAR ********************-->
+    <div class="navbar-wrapper">
+      <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+          <div class="container">
+            <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a>
+            <h1 class="brand"><a href="#top">Legend!</a></h1>
+            <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
+            <nav class="pull-right nav-collapse collapse">
+              <ul id="menu-main" class="nav">
+              </ul>
+            </nav>
+          </div>
+          <!-- /.container -->
+        </div>
+        <!-- /.navbar-inner -->
+      </div>
+      <!-- /.navbar -->
+    </div>
+    
+	<!-- /.navbar-wrapper -->
+    <div id="top"></div>  
+    
+	<hr>
+   
+	<!--******************** Register Section ******************** -->
+    <section id="contact" class="single-page scrollblock">
+	  <div id="resp_act" >
+		<div class="container"> 
+        <div class="align"><i class="icon-group-circled"></i></div>
+       
+		<h1 id="register_title">Registered Successfully</h1>
+		
+        <div class="row">
+          <div class="span12"> 
+            <div class="cform" id="theme-form">
+                
+					<div class="row">				
+						<div align="center"><h1>Thank You for your Registration.</h1></div>
+						<div align="center"><h2>Sign In With your credentials to activate your account AFTER redirection</h2></div>
+						<div align="center"><h3>You will be redirected in 5 seconds.</h3></div>
+					</div>
+					<p></p>
+                  <div class="cform-response-output"></div>
+            </div>
+          </div>
+          
+        </div>
+       
+      </div>
+	 </div>
+    </section> 
+   
+	<hr>
+    
+	<div class="footer-wrapper">
+      <div class="container">
+        <footer>
+          <small>&copy; 2014 The Chanakya Group. All rights reserved.</small>
+        </footer>
+      </div>
+      <!-- ./container -->
+    </div>
+    
+	<!-- Loading the javaScript at the end of the page -->
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/jquery.prettyPhoto.js"></script>
+    <script type="text/javascript" src="js/site.js"></script>
+	<!--Form validator js -->
+	<!-- <script type="text/javascript" src="js/jquery.min.js"></script> -->
+	<script type="text/javascript" src="js/jquery.form-validator.min.js"></script>
+	<script>
+		$.validate();
+	</script>
+	<script>
+	var check_sign = true;
+		function registerToSignIn(){
+		if(check_sign==true){
+			document.getElementById('register-form').innerHTML="";
+			document.getElementById('pd').innerHTML="";
+			document.getElementById('register_title').innerHTML="Login";
+			var inhtml = "<div class=\"row\"><div class=\"span4\"> <span class=\"your-email\"><input type=\"text\" name=\"your-email\" placeholder=\"Your Email\" class=\"cform-text\" size=\"40\" title=\"your email\"  data-validation=\"email\">"+
+                    "</span> </div>"+
+				  "<div class=\"span4\"> <span class=\"your-password\">"+
+                    "<input type=\"password\" placeholder=\"Your Password\" name=\"pass_confirmation\" data-validation-length=\"5\""+ 
+					"size=\"40\"  class=\"cform-password\" data-validation-error-msg=\"Minimum 5 characters\">"+
+                    "</span> </div>"+
+					"<div class=\"span4\"> <span class=\"your-name\">"+
+                    "<input type=\"submit\" value=\"Login\" class=\"cform-submit\"></span> </div></div>";
+			document.getElementById('register-form').innerHTML = inhtml;
+			document.getElementById('register-form').action="Login";
+			
+			document.getElementById('member').innerHTML="New User? Register";
+			check_sign=false;
+			}
+			else{
+				location.reload();
+				check_sign=true;
+			}
+		}
+		
+	</script>
+	<!-- <script type="text/javascript" src="js/lightbox-2.6.min.js"></script> -->
+    
+   
+    </body>
+   
+   </html>

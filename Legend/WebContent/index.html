@@ -1,0 +1,553 @@
+    <!DOCTYPE HTML>
+    <html lang="en">
+	
+    <head>
+    <meta charset="utf-8">
+    <title>Legend - The New way to Shop</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Styles -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel='stylesheet' id='prettyphoto-css'  href="css/prettyPhoto.css" type='text/css' media='all'>
+    <link href="css/fontello.css" type="text/css" rel="stylesheet">
+	<!-- Layers -->
+	<link href="css/layer.css" type="text/css" rel="stylesheet">
+	<!-- <link href="css/lightbox.css" type="text/css" rel="stylesheet" /> -->
+    <!--[if lt IE 7]>
+            <link href="css/fontello-ie7.css" type="text/css" rel="stylesheet">  
+        <![endif]-->
+    <!-- Google Web fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Quattrocento:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Patua+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <style>
+    body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+    }
+    </style>
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+          <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <!-- JQuery -->
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <!-- Load ScrollTo -->
+    <script type="text/javascript" src="js/jquery.scrollTo-1.4.2-min.js"></script>
+    <!-- Load LocalScroll -->
+    <script type="text/javascript" src="js/jquery.localscroll-1.2.7-min.js"></script>
+    <!-- prettyPhoto Initialization -->
+    <script type="text/javascript" charset="utf-8">
+          $(document).ready(function(){
+            $("a[rel^='prettyPhoto']").prettyPhoto();
+          });
+		function unHide(val){
+			document.getElementById("regDiv").style.display = "block";
+			 var url = 'AddToCartForm?PID='+val;
+			 
+			 $.get(url,function(inhtml) {
+				 //console.log("form resp: "+inhtml);
+				// window.open(inhtml,'_blank');
+				 if(inhtml==""){
+					 hide();
+					 window.location='#contact';
+				  }
+				 else
+					document.getElementById("form_add_to_cart").innerHTML=inhtml;
+				 	window.location='#regDiv';
+			});
+			
+		}
+
+		function hide(){
+			document.getElementById("regDiv").style.display = "none";
+        }
+	 </script>
+    </head>
+    
+	<body>
+    <!--******************** NAVBAR ********************-->
+    <div class="navbar-wrapper">
+      <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+          <div class="container">
+            <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a>
+            <h1 class="brand"><a href="#top">Legend!</a></h1>
+            <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
+            <nav class="pull-right nav-collapse collapse">
+              <ul id="menu-main" class="nav">
+                <li><a title="portfolio" href="#portfolio" onclick="newProducts();">New Products</a></li>
+                <li><a title="services" href="#services">Categories</a></li>
+                <li id="news_menu" style="display:none" ><a title="news"  href="#news">MyCart</a></li>
+                <li id="contact_menu" style="display:block" ><a title="contact"  href="#contact">Sign In</a></li> 
+              </ul>
+            </nav>
+          </div>
+          <!-- /.container -->
+        </div>
+        <!-- /.navbar-inner -->
+      </div>
+      <!-- /.navbar -->
+    </div>
+    
+	<!-- /.navbar-wrapper -->
+    <div id="top"></div>
+	
+    <!-- ******************** HeaderWrap ********************-->
+    <script>
+    	function getSearchResults(){
+    		var word = document.getElementById('search-product').value;
+    		var url='SearchUser?searchproduct='+word;
+    		console.log("url: "+url);
+    		$.get(url,function(resp){
+    			document.getElementById('search_results_div').style.display='';
+    			document.getElementById('search_results').innerHTML=resp;
+    			window.location='#search_results';
+    		});
+    	};
+    </script>
+    <div id="headerwrap">
+      <header class="clearfix">
+        <h1><span>Legend!</span> The new way to Shop.</h1>
+        <div class="container">
+          <div class="row">
+            <div class="span12">
+              <h2>Search for any product you want</h2>
+              <input type="text" id="search-product" name="search-product" onchange='getSearchResults()' placeholder="Head First Java" class="cform-text" size="40" title="Product search">
+              <input type="submit" onclick="getSearchResults()" value="Search" class="cform-submit">
+            </div>
+          </div>
+          <div class="row">
+            <div class="span12">
+              <ul class="icon">
+                <!-- <li><a href="#" target="_blank"><i class="icon-pinterest-circled"></i></a></li> -->
+                <li><a href="http://www.facebook.com" target="_blank"><i class="icon-facebook-circled"></i></a></li> 
+                <li><a href="http://www.twitter.com" target="_blank"><i class="icon-twitter-circled"></i></a></li> 
+                <li><a href="http://www.plus.google.com" target="_blank"><i class="icon-gplus-circled"></i></a></li>
+                <!-- <li><a href="#" target="_blank"><i class="icon-skype-circled"></i></a></li> -->
+              </ul>
+            </div>
+          </div>
+        </div>
+      </header>
+    </div>
+    
+	<!--******************** Search Reults ******************** --> 
+    <section id="search_results_div" class="single-page scrollblock"  style="display: none">
+      <div class="container">
+       
+        <h1 id="search_headline">Search Results</h1>
+		
+		<div class="row" id="search_results" >
+          
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.container -->
+    </section>
+	<hr>
+    
+	<!--******************** New Products Section ********************-->
+     <script>
+	$(document).ready(function() {                        
+        $.get('getNewProducts',function(responseText) { 
+        	document.getElementById('folio-headline').innerHTML="New Products";
+        	document.getElementById('newproducts').innerHTML=responseText;         
+        });
+	});
+	function newProducts(){
+		 $.get('getNewProducts',function(responseText) { 
+			 document.getElementById('folio-headline').innerHTML="New Products";
+	        	document.getElementById('newproducts').innerHTML=responseText;         
+	        });
+	};
+	</script>
+	<section id="portfolio" class="single-page scrollblock">
+      <div class="container">
+       
+        <h1 id="folio-headline">New Products</h1>
+			<div id="regDiv" style="display : none;">
+				<div id="regBg" style=" opacity:0.68; height:643px; display:block" onclick="hide()"></div>
+				<div id="main" style="position: absolute;top:30px;left: 400px;"><form id="form_add_to_cart" name="form_add_to_cart" action="AddToCart"></form></div>
+			</div>
+		
+		<div class="row" id="newproducts" >
+          
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.container -->
+    </section>
+   
+	
+	<hr>
+    
+	<!--******************** Categories Section ********************-->
+	<script>
+	function getProductsByCategory(cat) {
+		var url = "CategoryDetail?cat="+cat;
+		var heading = cat.replace(cat.charAt(0),cat.charAt(0).toUpperCase());
+		
+		document.getElementById('folio-headline').innerHTML="All Products of "+heading+" Category";
+        $.get(url,function(responseText) { 
+			// window.location = "#portfolio";
+        	document.getElementById('newproducts').innerHTML=responseText;         
+        });
+	};
+	$(document).ready(function() {                        
+        $.get('GetAllCategory',function(responseText) { 
+        	//document.getElementById('folio-headline').innerHTML="New Products";
+        	console.log(responseText);
+        	document.getElementById('allcat').innerHTML=responseText;         
+        });
+	});
+	
+	function change(val) {
+	  console.log(val);
+	  getProductsByCategory(val);
+	  window.location='#portfolio';
+	  return false
+	};
+	</script>
+    <section id="services" class="single-page scrollblock">
+      <div class="container">
+        <div class="align"><i class="icon-cog-circled"></i></div>
+        <h1>Categories</h1>
+        <!-- Four columns -->
+        <div class="row">
+          <div class="span3"  onclick="getProductsByCategory('computers');" >
+            <div class="align"> <a href="#portfolio"><i class="icon-desktop sev_icon"></i></a> </div>
+            <h2>Computers</h2>
+          </div>
+          <!-- /.span3 -->
+          <div class="span3" onclick="getProductsByCategory('books');">
+            <div class="align"> <a href="#portfolio"><i class="icon-vector sev_icon"></i></a></div>
+            <h2>Books</h2>
+          </div>
+          <!-- /.span3 -->
+          <div class="span3" onclick="getProductsByCategory('cosmetics');">
+            <div class="align"> <a href="#portfolio"><i class="icon-basket sev_icon"></i></a></div>
+            <h2>Cosmetics</h2>
+            
+          </div>
+          <!-- /.span3 -->
+          <div class="span3" onclick="getProductsByCategory('mobile');">
+            <div class="align"> <a href="#portfolio"><i class="icon-mobile-1 sev_icon"></i></a></div>
+            <h2>Mobile</h2>
+          </div>
+         
+        </div>
+         <br/>
+          <p>Other Categories: <select name="allcat" id="allcat" onchange="change(this.value)"></select></p>
+        </div>
+		<br/>
+		
+      <!-- /.container -->
+    </section>
+    
+	<hr>
+    
+    
+	<!--******************** My Cart(only when logged in) ********************-->
+    <script>
+	$(document).ready(function() {                        
+        $.get('CheckLoginStatus',function(responseText) {  
+        	console.log("resp: "+(responseText==""));	
+        	if((responseText=="")==true){
+        		//not logged in
+        		document.getElementById('news').style.display='none';
+        		document.getElementById('news_menu').style.display='none';
+        	}
+        	else{
+        		//logged in
+        		document.getElementById('news').style.display='';
+        		document.getElementById('news_menu').style.display='';
+        		document.getElementById('contact').style.display='none';
+        		//document.getElementById('contact_menu').style.display='none';
+        		document.getElementById('contact_menu').innerHTML='<a href=\'Logout\'>Logout</a>';
+        		getMyCart(responseText);
+        	}
+        });
+	});
+	function getMyCart(a){
+    	//console.log(a);	
+    	var name = a.replace(a.charAt(0),a.charAt(0).toUpperCase());
+    	document.getElementById('name_insert').innerHTML=name.valueOf();
+    	console.log(name);
+    	 $.get('GetProducts',function(html) { 
+			if(html==""){
+				document.getElementById('mycartproducts').innerHTML="<h2>No Items in Cart</h2>";
+				document.getElementById('purchase_button').style.display='none';
+			}
+			else{
+				document.getElementById('mycartproducts').innerHTML=html;
+				document.getElementById('purchase_button').style.display='';
+			}
+    		 
+    	 });
+    };
+	function retrieveDetails(pid){
+		console.log("edit product: "+pid);
+		unHide(pid);
+	};
+	function deleteProd(pid){
+		//console.log(pid);
+		var url = 'deleteFromCart?PID='+pid;
+		$.get(url,function(response){
+			window.location=response;
+			alert('Product removed from cart.');
+		});
+		
+	};
+	</script>
+	<section id="news" class="single-page scrollblock" style="display:none" >
+      <div class="container" id="mycart" >
+        <div class="align"><i class="icon-pencil-circled"></i></div>
+        <h1><span id="name_insert"></span>'s Cart</h1>
+        <!-- If the user is logged in, we should show his cart, or else hide this div -->
+       <div class="row" id="mycartproducts">
+         
+          
+       </div>
+        
+      </div>
+        
+          <div id="purchase_button"><a href="purchase_cart.html#contact" target="_blank" class="btn btn-large">Purchase</a> </div>
+
+    
+    </section>
+    
+	<hr>
+    
+	
+   
+	<!--******************** Register Section ******************** -->
+	<script>
+	function checkAvailability(){
+		var url = 'CheckValidEmail?email='+document.getElementById("your-email").value;
+		$.get(url,function(responseText) { 
+			var res = responseText;
+			console.log("resp: "+res);
+			if(res==""){
+				document.getElementById('register-submit').type="submit";
+			}
+			else{
+				document.getElementById('register-submit').type="hidden";
+			}
+			document.getElementById('valid_email').innerHTML=res;
+        });
+	};
+	</script>
+    <section id="contact" class="single-page scrollblock">
+      <div class="container" id="reg_login"> 
+        <div class="align"><i class="icon-group-circled"></i></div>
+       
+		<h1 id="register_title">Register</h1>
+		<div align="right"><strong><b><div id="forgotpwd" style="display:none"><a id="forgot" onclick="forgotpwd()" >Forgot Password?</a></div><a id="member" onclick="registerToSignIn()" >Already a Member? Sign In</a></b></strong></div>
+        <div class="row">
+          <div class="span12"> 
+            <div class="cform" id="theme-form">
+              
+                <span id="pd">Personal Details:</span> 
+				<form id="register-form" action="/Legend/RegisterServlet" method="post" class="cform-form">
+				<div class="row">
+				
+                  <div class="span4"> <span class="your-name">
+                    <input type="text" name="your-name" placeholder="Your Name" class="cform-text" size="40" 
+					title="your name"  data-validation="custom" data-validation-regexp="^([A-Za-z ]+)$" data-validation-error-msg="Only Alphabets allowed" >
+                    </span> </div>
+                  <div class="span4"> <span class="your-email">
+                    <input type="text" name="your-email" id="your-email" placeholder="Your Email" class="cform-text" size="40" title="your email" onkeyup="checkAvailability()"  onchange="checkAvailability()" data-validation="email" />
+					</span><div id="valid_email"></div> </div>
+				  <div class="span4"> <span class="your-password">
+                    <input type="password" placeholder="Your Password" name="pass_confirmation" data-validation-length="5" 
+					size="40"  class="cform-password" data-validation-error-msg="Minimum 5 characters">
+                    </span> </div>
+					
+                </div>
+				<div class="row">
+				
+                  <div class="span4"> <span class="your-phone">
+                    <input type="text" name="your-phone" placeholder="Your Number" class="cform-text" size="40" 
+					title="your phone number" data-validation="number" data-validation-allowing="range[1000000000;9999999999]" data-validation-error-msg="Phone number has 10 digits" >
+                    </span> </div>
+                  <div class="span4"> <span class="your-name">
+                    <input type="text" name="your-gender" placeholder="Gender" class="cform-text" size="40" title="your gender"  data-suggestions="Other,Female, Male" >
+                    </span> </div>
+					 
+				  <div class="span1"> Date of Birth:</div><div class="span3"><span class="your-name">
+                    <input type="date"  name="your-dob" placeholder="dob" size="40"  class="cform-date" >
+                    </span> </div>
+					
+                </div>
+				Address Details: 
+				<div class="row">
+				  <div class="span3"> <span class="your-door-num">
+                    <input type="text" name="your-door-num" placeholder="Door Number" class="cform-text" size="40" 
+					title="Door Number" data-validation="alphanumeric" data-validation-allowing="-_/" data-validation-error-msg="Alphanumeric with -, _,/ are allowed" >
+                    </span> </div>
+                  <div class="span3"> <span class="your-street">
+                    <input type="text" name="your-street" placeholder="Street Name" class="cform-text" size="40" title="your street" >
+                    </span> </div>
+				  <div class="span3"> <span class="your-city">
+                    <input type="text" placeholder="City Name" name="your-city" size="40"  class="cform-text">
+                    </span> </div>
+				  <div class="span3"> <span class="your-State">
+                    <input type="text" placeholder="State Name" name="your-state" size="40"  class="cform-text">
+                    </span> </div>
+                </div>
+				<div class="row">
+                  <div class="span4" style="visibility:hidden"></div>
+					<div class="span4"> <span class="your-pin">
+                    <input type="text" name="your-pin-code" placeholder="Pin/Zip Code" class="cform-text" size="40" 
+					title="pincode" data-validation="number" data-validation-error-msg="Pin/zip code should have only numbers">
+                    </span> </div>
+                </div>
+                
+                <div>
+                  <center><input type="submit" id="register-submit" value="Register" class="btn btn-large"></center>
+                </div>
+                <div class="cform-response-output"></div>
+              </form>
+            </div>
+          </div>
+          
+        </div>
+       
+      </div>
+      <div id="resp_act" style="display:none">
+<div class="container"> 
+        <div class="align"><i class="icon-group-circled"></i></div>
+       
+		<h1 id="register_title">Register</h1>
+		
+        <div class="row">
+          <div class="span12"> 
+            <div class="cform" id="theme-form">
+                
+				<form id="register-activate" action="Activate" method="post" class="cform-form">
+					<div class="row">				
+						<div align="center"><h1>Thank You for your Registeration.</h1></div>
+						<div align="center">An <b><u>ACTIVATION CODE</u></b> has been sent to your email ID: <span id="act_eid"></span> Kindly enter the code to confirm your activation.</div>
+					</div>
+					<p></p>
+					<div class="row">
+						<div class="span4"></div>
+						<div class="span4"><span class="your-name">
+							<input type="text" name="verfCode" id="verfCode" placeholder="Verification Code" class="cform-text" size="40" title="Verification code sent to email" />
+						</span></div>
+					</div>
+                
+				
+                   <center><input type="submit" value="Activate" class="cform-submit"></center>
+                  <div class="cform-response-output"></div>
+                </form>
+            </div>
+          </div>
+          
+        </div>
+       
+      </div>
+</div>
+    </section> 
+   
+	<hr>
+    
+	<div class="footer-wrapper">
+      <div class="container">
+        <footer>
+          <small>&copy; 2014 The Chanakya Group. All rights reserved.</small>
+        </footer>
+      </div>
+      <!-- ./container -->
+    </div>
+    
+	<!-- Loading the javaScript at the end of the page -->
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/jquery.prettyPhoto.js"></script>
+    <script type="text/javascript" src="js/site.js"></script>
+	<!--Form validator js -->
+	<!-- <script type="text/javascript" src="js/jquery.min.js"></script> -->
+	<script type="text/javascript" src="js/jquery.form-validator.min.js"></script>
+	<script>
+		$.validate();
+	</script>
+	<script>
+	var check_sign = true;
+	function checkEmailLogin(){
+		var url = 'CheckValidEmailLogin?email='+document.getElementById("your-email123").value;
+		$.get(url,function(responseText) { 
+			var res = responseText;
+			console.log("resp: "+res);
+			if(res==""){
+				document.getElementById('login-submit').type="submit";
+			}
+			else{
+				document.getElementById('login-submit').type="hidden";
+			}
+			document.getElementById('valid_email').innerHTML=res;
+        });
+	};
+	
+		function registerToSignIn(){
+		if(check_sign==true){
+			document.getElementById('register-form').innerHTML="";
+			document.getElementById('pd').innerHTML="";
+			document.getElementById('forgotpwd').style.display='';
+			document.getElementById('register_title').innerHTML="Login";
+			var inhtml = "<div class=\"row\"><div class=\"span4\"> <span class=\"your-email\"><input onchange=\"checkEmailLogin()\" onkeyup=\"checkEmailLogin()\" type=\"text\" id=\"your-email123\" name=\"your-email\" placeholder=\"Your Email\" class=\"cform-text\" size=\"40\" title=\"your email\"  data-validation=\"email\">"+
+                    "</span><div id='valid_email'> </div> </div>"+
+				  "<div class=\"span4\"> <span class=\"your-password\">"+
+                    "<input type=\"password\" placeholder=\"Your Password\" name=\"pass_confirmation\" data-validation-length=\"5\""+ 
+					"size=\"40\"  class=\"cform-password\" data-validation-error-msg=\"Minimum 5 characters\">"+
+                    "</span> </div>"+
+					"<div class=\"span4\"> <span class=\"your-name\">"+
+                    "<input type=\"submit\" value=\"Login\" id=\"login-submit\" name=\"login-submit\" class=\"cform-submit\"></span> </div></div>";
+			document.getElementById('register-form').innerHTML = inhtml;
+			document.getElementById('register-form').action="Login";
+			
+			document.getElementById('member').innerHTML="New User? Register";
+			check_sign=false;
+			}
+			else{
+				location.reload();
+				check_sign=true;
+			}
+		};
+		
+		function forgotpwd(){
+			//if(check_sign==true){
+			document.getElementById('register-form').innerHTML="";
+			document.getElementById('pd').innerHTML="";
+			document.getElementById('forgotpwd').style.display='none';
+			document.getElementById('register_title').innerHTML="Login";
+			var inhtml = "<div class=\"row\"><div class=\"span4\">Enter Your Email ID: </div>"+
+				  "<div class=\"span4\"> <span class=\"your-email\"><input onchange=\"checkEmailLogin()\" onkeyup=\"checkEmailLogin()\" type=\"text\" id=\"your-email123\" name=\"your-email\" placeholder=\"Your Email\" class=\"cform-text\" size=\"40\" title=\"your email\"  data-validation=\"email\">"+
+                    "</span><div id='valid_email'> </div> </div>"+
+					"<div class=\"span4\"> <span class=\"your-name\">"+
+                    "<input type=\"submit\" value=\"Send Password\" id=\"login-submit\" name=\"login-submit\" class=\"cform-submit\"></span> </div></div>";
+			document.getElementById('register-form').innerHTML = inhtml;
+			document.getElementById('register-form').action="ForgotPasswordServlet";
+			
+			document.getElementById('member').innerHTML="New User? Register";
+			//check_sign=false;
+			//}
+			//else{
+				//location.reload();
+				//check_sign=true;
+			//}
+			
+		};
+	</script>
+
+	<!-- <script type="text/javascript" src="js/lightbox-2.6.min.js"></script> -->
+    
+   
+    </body>
+   
+   </html>
